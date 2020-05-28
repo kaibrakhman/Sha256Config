@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+                <div class="col-lg-10">
+                <h1 class="text-center">MD5</h1>
+                <h1 class="text-center">MD5</h1>
+                <hr>
+                <p class="lead">MD5 online hash function!</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <p >Input*: </p>
+                       {{ form|crispy }}
+                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Hash">
+                    </form>
+                <div class="form-group pt-4">
+                    <p>Output*</p>
+                       <p>{{output}}</p>
+                    <p class="pt-4"></p>
+               </div>
+                <div>
+                    <p >MD5 </p>
+                    <p class="text-black">The MD5 function is a cryptographic algorithm that takes an input of arbitrary length and produces a message digest that is 128 bits long. The digest is sometimes also called the "hash" or "fingerprint" of the input. ... MD5 was designed by well-known cryptographer Ronald Rivest in 1991.</p>
+                    </div>
+                <div class="pt-5"></div>
+            </div>
+{% endblock %}
